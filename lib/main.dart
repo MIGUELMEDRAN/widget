@@ -5,7 +5,6 @@ import 'package:pruebas/custom_stepper_controller.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-
   CustomStepperController customStepperController = CustomStepperController();
 
   @override

@@ -13,9 +13,9 @@ class CustomStepper extends StatelessWidget {
    */
   CustomStepper({
     Key? key,
-    required this.customStepperController, required this.stepperItems,
+    required this.customStepperController,
+    required this.stepperItems,
   }) : super(key: key);
-
 
   List<Widget> items = [];
   int indicatorStep = 0; //Indica cual stepper es el que se está dibujando
@@ -35,18 +35,17 @@ class CustomStepper extends StatelessWidget {
   }
 
   void setStateStepper() {
-
     indicatorStep = 0;
     customStepperController.totalStep = 0;
     items.clear();
 
     //Calculo el total de pasos del widget
     stepperItems.values.toList().forEach((element) {
-      customStepperController.totalStep = customStepperController.totalStep + element ;
+      customStepperController.totalStep =
+          customStepperController.totalStep + element;
     });
-    customStepperController.totalStep = customStepperController.totalStep + stepperItems.keys.length;
-    
-
+    customStepperController.totalStep =
+        customStepperController.totalStep + stepperItems.keys.length;
 
     stepperItems.forEach(
       (key, value) {
@@ -57,9 +56,9 @@ class CustomStepper extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: customStepperController.currentStep == indicatorStep
-                    ? Colors.greenAccent
+                    ? Color(0XFF22593C)
                     : customStepperController.currentStep >= indicatorStep
-                        ? Colors.green
+                        ? Color(0XFF03A851)
                         : Colors.white,
                 border: Border.all(),
               ),
@@ -67,19 +66,18 @@ class CustomStepper extends StatelessWidget {
               child: Text(
                 '$key',
                 style: TextStyle(
-                  color: customStepperController.currentStep >= indicatorStep
+                    color: customStepperController.currentStep >= indicatorStep
                         ? Colors.white
                         : Colors.grey,
-                  fontWeight: FontWeight.bold
-                ),
+                    fontWeight: FontWeight.bold),
               ),
             ),
             SizedBox(
-              width: 10,
+              width: 200,
               child: Divider(
                 thickness: 1,
                 color: customStepperController.currentStep > indicatorStep
-                    ? Colors.green
+                    ? Color(0XFF03A851)
                     : Colors.black,
               ),
             ),
@@ -95,20 +93,20 @@ class CustomStepper extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: customStepperController.currentStep == indicatorStep
-                      ? Colors.greenAccent
+                      ? Color(0XFF22593C)
                       : customStepperController.currentStep >= indicatorStep
-                          ? Colors.green
+                          ? Color(0XFF03A851)
                           : Colors.white,
                   border: Border.all(),
                 ),
                 padding: const EdgeInsets.all(10),
               ),
               SizedBox(
-                width: 10,
+                width: 200,
                 child: Divider(
                   thickness: 1,
                   color: customStepperController.currentStep > indicatorStep
-                      ? Colors.green
+                      ? Color(0XFF03A851)
                       : Colors.black,
                 ),
               ),
