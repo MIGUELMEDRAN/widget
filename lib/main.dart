@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
             Center(
               child: CustomStepper(
                 customStepperController: customStepperController,
-                stepperItems: const {1: 1, 2: 4, 3: 1, 4: 4, 5: 6, 6: 0},
+                stepperItems: const {1: 1, 2: 4, 3: 1},
               ),
             ),
             TextButton(

@@ -56,11 +56,13 @@ class CustomStepper extends StatelessWidget {
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: customStepperController.currentStep == indicatorStep
-                    ? Color(0XFF22593C)
+                    ? const Color(0XFF22593C)
                     : customStepperController.currentStep >= indicatorStep
-                        ? Color(0XFF03A851)
+                        ? const Color(0XFF03A851)
                         : Colors.white,
-                border: Border.all(),
+                border: customStepperController.currentStep >= indicatorStep
+                        ? null
+                        : Border.all(),
               ),
               padding: const EdgeInsets.all(10),
               child: Text(
@@ -73,11 +75,11 @@ class CustomStepper extends StatelessWidget {
               ),
             ),
             SizedBox(
-              width: 200,
+              width: 10,
               child: Divider(
                 thickness: 1,
                 color: customStepperController.currentStep > indicatorStep
-                    ? Color(0XFF03A851)
+                    ? const Color(0XFF03A851)
                     : Colors.black,
               ),
             ),
@@ -93,20 +95,22 @@ class CustomStepper extends StatelessWidget {
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   color: customStepperController.currentStep == indicatorStep
-                      ? Color(0XFF22593C)
+                      ? const Color(0XFF22593C)
                       : customStepperController.currentStep >= indicatorStep
-                          ? Color(0XFF03A851)
+                          ? const Color(0XFF03A851)
                           : Colors.white,
-                  border: Border.all(),
+                  border: customStepperController.currentStep >= indicatorStep
+                        ? null
+                        : Border.all(),
                 ),
-                padding: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(8),
               ),
               SizedBox(
-                width: 200,
+                width: 10,
                 child: Divider(
                   thickness: 1,
                   color: customStepperController.currentStep > indicatorStep
-                      ? Color(0XFF03A851)
+                      ? const Color(0XFF03A851)
                       : Colors.black,
                 ),
               ),
