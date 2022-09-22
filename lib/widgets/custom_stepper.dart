@@ -1,6 +1,6 @@
 import 'package:change_notifier_builder/change_notifier_builder.dart';
 import 'package:flutter/material.dart';
-import 'package:pruebas/custom_stepper_controller.dart';
+import 'package:pruebas/widgets/custom_stepper_controller.dart';
 
 class CustomStepper extends StatelessWidget {
   final CustomStepperController customStepperController;
