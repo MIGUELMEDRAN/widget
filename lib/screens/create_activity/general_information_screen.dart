@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:pruebas/widgets/custom_text_form_field.dart';
 import 'package:pruebas/widgets/date_text_form_field.dart';
+import 'package:pruebas/widgets/search_bar.dart';
 
 class GeneralnformationScreen extends StatelessWidget {
   GeneralnformationScreen({Key? key}) : super(key: key);
@@ -11,6 +12,16 @@ class GeneralnformationScreen extends StatelessWidget {
 
     return Column(
       children: [
+
+        SearchBar(
+          labelTextField: 'Escribe tu busqueda',
+          labelButton: 'Buscar',
+          onSearch: (value){
+            print(value);
+          },
+        ),
+        SizedBox(height: size.height * 0.1),
+
         CustomTextFormField(
           label: 'Empresa solicitante',
           hintText: 'Escribir aquí',
